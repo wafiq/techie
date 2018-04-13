@@ -1,0 +1,55 @@
+.talents
+  .container
+    #profile-list
+      / .row.mb-3
+      /   .col-sm-8
+      /     button.btn.btn-light.sort.mr-1 data-sort="name"
+      /       i.fas.fa-sort.fa-fw.mr-1
+      /       | Sort by Name
+      /     button.btn.btn-light.sort data-sort="profession"
+      /       i.fas.fa-sort.fa-fw.mr-1
+      /       | Sort by Profession
+      .search
+        input.form-control.search.mx-auto.form-control-lg type="text" name="search" placeholder="Search e.g. ios, css..."
+      #loading.spinner
+      .card-columns.profile-list.list
+        script#template data-collection="Talents" type="text/x-handlebars-template"
+          | {{#elements}}
+          .card.profile
+            .thumb.lazy data-src="{{coverImage}}"
+              .filter
+              img.lazy data-src="{{avatarUrl}}" alt="{{Name}}"
+            .card-body
+              h5.name.mb-0 = "{{Name}}"
+              p.small: em.profession = "{{Profession}}"
+              p.small.text-muted.mb-0 = "{{Description}}"
+            ul.list-group.list-group-flush
+              | {{#Skills}}
+              li.list-group-item
+                span.list-label Skills
+                p.mb-0.skill = "{{Skills}}"
+              | {{/Skills}}
+              | {{#Availability}}
+              li.list-group-item
+                span.list-label Availability
+                p.mb-0 = "{{Availability}}"
+              | {{/Availability}}
+            .card-body
+              .socials
+                | {{#Website}}
+                a.homepage.d-block href="http://{{Website}}" target="_blank"
+                  i.fas.fa-home.fa-fw.text-secondary
+                  span.ml-1 = "{{Website}}"
+                | {{/Website}}
+                | {{#Twitter}}
+                a.twitter.d-block href="https://twitter.com/{{Twitter}}" target="_blank"
+                  i.fab.fa-twitter.fa-fw.text-secondary
+                  span.ml-1 = "{{Twitter}}"
+                | {{/Twitter}}
+                | {{#Email}}
+                a.social-email.d-block href="mailto:{{Email}}" target="_blank"
+                  i.fas.fa-envelope.fa-fw.text-secondary
+                  span.ml-1 = "{{emailObfuse}}"
+                | {{/Email}}
+            span.index.d-none = "{{index}}"
+          | {{/elements}}
