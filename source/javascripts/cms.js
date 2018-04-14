@@ -15,14 +15,26 @@ cms.buildPage = function(){
   var template = $template.html();
 
   var collection = {};
-  collection.elements = $.map(data[sheet].elements, function(el, i){
-    el.index = i;
-    el.avatarUrl = function(){
-      return gravatar(el["Email"], { size: 160, backup: "mm" });
+  collection.elements = $.map(data[sheet].toArray(), function(el, i){
+    profile = {
+      index: i,
+      name: el[1],
+      email: el[2],
+      website: el[4],
+      twitter: el[5],
+      availability: el[6],
+      experience: el[7],
+      depth: el[8],
+      profession: el[9],
+      skills: el[10],
+      description: el[11],
+      coverImage: "//picsum.photos/40" + getRandomInt(9) + "/20" + getRandomInt(9),
+      emailObfuse: el[2].replace(/@/, "(at)")
+    }
+    profile.avatarUrl = function(){
+      return gravatar(el[2], { size: 160, backup: "mm" });
     };
-    el.coverImage = "//picsum.photos/40" + getRandomInt(9) + "/20" + getRandomInt(9);
-    el.emailObfuse = el["Email"].replace(/@/, "(at)");
-    return el;
+    return profile;
   });
 
   Mustache.parse(template);
@@ -45,8 +57,9 @@ cms.buildPage = function(){
 
 $(function(){
   cms.tabletop = Tabletop.init({
-    key: '117XHn5ry7u3toeYNfk0p5FCmPdcuD7_YGPUFpGzEkdk',
-    callback: cms.buildPage
+    key: '1OvL8b7De7RYgZIEIp4tVX0iHtdq_HkJsxcotbaN36TI',
+    callback: cms.buildPage,
+    simpleSheet: true
   });
 
 });

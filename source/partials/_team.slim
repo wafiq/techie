@@ -18,38 +18,38 @@
           .card.profile
             .thumb.lazy data-src="{{coverImage}}"
               .filter
-              img.lazy data-src="{{avatarUrl}}" alt="{{Name}}"
+              img.lazy data-src="{{avatarUrl}}" alt="{{name}}"
             .card-body
-              h5.name.mb-0 = "{{Name}}"
-              p.small: em.profession = "{{Profession}}"
-              p.small.text-muted.mb-0 = "{{Description}}"
+              h5.name.mb-0 = "{{name}}"
+              p.small: em.profession = "{{profession}}"
+              p.small.text-muted.mb-0 = "{{description}}"
             ul.list-group.list-group-flush
-              | {{#Skills}}
+              | {{#skills}}
               li.list-group-item
                 span.list-label Skills
-                p.mb-0.skill = "{{Skills}}"
-              | {{/Skills}}
-              | {{#Availability}}
+                p.mb-0.skill = "{{skills}}"
+              | {{/skills}}
+              | {{#availability}}
               li.list-group-item
                 span.list-label Availability
-                p.mb-0 = "{{Availability}}"
-              | {{/Availability}}
+                p.mb-0 = "{{availability}}"
+              | {{/availability}}
             .card-body
               .socials
-                | {{#Website}}
-                a.homepage.d-block href="http://{{Website}}" target="_blank"
+                | {{#website}}
+                a.homepage.d-block href="http://{{website}}" target="_blank"
                   i.fas.fa-home.fa-fw.text-secondary
-                  span.ml-1 = "{{Website}}"
-                | {{/Website}}
-                | {{#Twitter}}
-                a.twitter.d-block href="https://twitter.com/{{Twitter}}" target="_blank"
+                  span.ml-1 = "{{website}}"
+                | {{/website}}
+                | {{#twitter}}
+                a.twitter.d-block href="https://twitter.com/{{twitter}}" target="_blank"
                   i.fab.fa-twitter.fa-fw.text-secondary
-                  span.ml-1 = "{{Twitter}}"
-                | {{/Twitter}}
-                | {{#Email}}
-                a.social-email.d-block href="mailto:{{Email}}" target="_blank"
+                  span.ml-1 = "{{twitter}}"
+                | {{/twitter}}
+                | {{#email}}
+                a.social-email.d-block href="mailto:{{email}}" target="_blank"
                   i.fas.fa-envelope.fa-fw.text-secondary
                   span.ml-1 = "{{emailObfuse}}"
-                | {{/Email}}
+                | {{/email}}
             span.index.d-none = "{{index}}"
           | {{/elements}}
