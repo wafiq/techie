@@ -44,7 +44,7 @@ cms.buildPage = function(){
   $template.remove();
 
   var listOptions = {
-    valueNames: ['index', 'name', 'profession', 'skill']
+    valueNames: ['index', 'name', 'profession', 'skill', 'availability']
   };
   var profileList = new List('profile-list', listOptions);
   profileList.on('updated', function(){

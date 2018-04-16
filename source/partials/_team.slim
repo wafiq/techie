@@ -10,7 +10,7 @@
       /       i.fas.fa-sort.fa-fw.mr-1
       /       | Sort by Profession
       .search
-        input.form-control.search.mx-auto.form-control-lg type="text" name="search" placeholder="Search e.g. ios, css..."
+        input.form-control.search.mx-auto.form-control-lg type="text" name="search" placeholder="Search e.g. ios, css, full-time..."
       #loading.spinner
       .card-columns.profile-list.list
         script#template data-collection="Talents" type="text/x-handlebars-template"
@@ -32,23 +32,23 @@
               | {{#availability}}
               li.list-group-item
                 span.list-label Availability
-                p.mb-0 = "{{availability}}"
+                p.availability.mb-0 = "{{availability}}"
               | {{/availability}}
             .card-body
               .socials
                 | {{#website}}
                 a.homepage.d-block href="http://{{website}}" target="_blank"
-                  i.fas.fa-home.fa-fw.text-secondary
+                  i.fas.fa-home.fa-fw
                   span.ml-1 = "{{website}}"
                 | {{/website}}
                 | {{#twitter}}
                 a.twitter.d-block href="https://twitter.com/{{twitter}}" target="_blank"
-                  i.fab.fa-twitter.fa-fw.text-secondary
+                  i.fab.fa-twitter.fa-fw
                   span.ml-1 = "{{twitter}}"
                 | {{/twitter}}
                 | {{#email}}
                 a.social-email.d-block href="mailto:{{email}}" target="_blank"
-                  i.fas.fa-envelope.fa-fw.text-secondary
+                  i.fas.fa-envelope.fa-fw
                   span.ml-1 = "{{emailObfuse}}"
                 | {{/email}}
             span.index.d-none = "{{index}}"

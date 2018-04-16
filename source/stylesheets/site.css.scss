@@ -50,6 +50,7 @@
     top: -12px;
     .form-control {
       min-width: 50%;
+      border-width: 2px;
       @media (min-width: 768px) {
         max-width: 50%;
       }
@@ -61,7 +62,6 @@
   column-gap: 2rem;
   .profile {
     margin-bottom: 2rem;
-    box-shadow: 0 2px 0.625rem rgba(#aaa, 0.1);
     overflow: hidden;
     border-radius: 0.5rem;
     .thumb {
@@ -98,6 +98,12 @@
       color: #aaa;
       text-transform: uppercase;
       font-size: 0.65rem;
+    }
+    .socials {
+      a svg {
+        font-size: 0.75rem;
+        color: #bbb;
+      }
     }
   }
 }
