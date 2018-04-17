@@ -37,19 +37,24 @@
             .card-body
               .socials
                 | {{#website}}
-                a.homepage.d-block href="http://{{website}}" target="_blank"
+                a.link.homepage.d-block href="http://{{website}}" target="_blank"
                   i.fas.fa-home.fa-fw
                   span.ml-1 = "{{website}}"
                 | {{/website}}
+                | {{#code}}
+                a.link.code.d-block href="http://{{code}}" target="_blank"
+                  i.fab.fa-github.fa-fw
+                  span.ml-1 = "{{codeDisplay}}"
+                | {{/code}}
                 | {{#twitter}}
-                a.twitter.d-block href="https://twitter.com/{{twitter}}" target="_blank"
+                a.link.twitter.d-block href="https://twitter.com/{{twitter}}" target="_blank"
                   i.fab.fa-twitter.fa-fw
                   span.ml-1 = "{{twitter}}"
                 | {{/twitter}}
                 | {{#email}}
-                a.social-email.d-block href="mailto:{{email}}" target="_blank"
-                  i.fas.fa-envelope.fa-fw
-                  span.ml-1 = "{{emailObfuse}}"
+                span.link.email.d-block
+                  i.fas.fa-at.fa-fw
+                  span.ml-1.text-secondary = "{{emailObfuse}}"
                 | {{/email}}
             span.index.d-none = "{{index}}"
           | {{/elements}}

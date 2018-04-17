@@ -28,6 +28,8 @@ cms.buildPage = function(){
       profession: el[9],
       skills: el[10],
       description: el[11],
+      code: el[17],
+      codeDisplay: el[17].replace(/https?:\/\//, ''),
       coverImage: "//picsum.photos/40" + getRandomInt(9) + "/20" + getRandomInt(9),
       emailObfuse: el[2].replace(/@/, "(at)")
     }
