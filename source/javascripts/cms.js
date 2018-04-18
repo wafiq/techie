@@ -21,7 +21,7 @@ cms.buildPage = function(){
       name: el[1],
       email: el[2],
       website: el[4],
-      websiteClean: el[4].replace(/https?:\/\//, '').replace(/\/$/),
+      websiteClean: el[4].replace(/https?:\/\//, '').replace(/\/$/, ''),
       twitter: el[5],
       twitterClean: el[5].replace(/https?:\/\/(www\.)?(twitter\.com\/)?/, '@'),
       code: el[17],
