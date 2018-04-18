@@ -21,17 +21,19 @@ cms.buildPage = function(){
       name: el[1],
       email: el[2],
       website: el[4],
+      websiteClean: el[4].replace(/https?:\/\//, '').replace(/\/$/),
       twitter: el[5],
+      twitterClean: el[5].replace(/https?:\/\/(www\.)?(twitter\.com\/)?/, '@'),
+      code: el[17],
+      codeClean: el[17].replace(/https?:\/\//, '').replace(/\/$/, ''),
       availability: el[6],
       experience: el[7],
       depth: el[8],
       profession: el[9],
       skills: el[10],
       description: el[11],
-      code: el[17],
-      codeDisplay: el[17].replace(/https?:\/\//, ''),
       coverImage: "//picsum.photos/40" + getRandomInt(9) + "/20" + getRandomInt(9),
-      emailObfuse: el[2].replace(/@/, "(at)")
+      emailObfuse: el[2].replace(/@/, "(at)").toLowerCase()
     }
     profile.avatarUrl = function(){
       return gravatar(el[2], { size: 160, backup: "mm" });

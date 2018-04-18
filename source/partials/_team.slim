@@ -37,19 +37,19 @@
             .card-body
               .socials
                 | {{#website}}
-                a.link.homepage.d-block href="http://{{website}}" target="_blank"
+                a.link.homepage.d-block href="//{{websiteClean}}?ref=techie.my" target="_blank"
                   i.fas.fa-home.fa-fw
-                  span.ml-1 = "{{website}}"
+                  span.ml-1 = "{{websiteClean}}"
                 | {{/website}}
                 | {{#code}}
-                a.link.code.d-block href="http://{{code}}" target="_blank"
+                a.link.code.d-block href="//{{codeClean}}" target="_blank"
                   i.fab.fa-github.fa-fw
-                  span.ml-1 = "{{codeDisplay}}"
+                  span.ml-1 = "{{codeClean}}"
                 | {{/code}}
                 | {{#twitter}}
-                a.link.twitter.d-block href="https://twitter.com/{{twitter}}" target="_blank"
+                a.link.twitter.d-block href="//twitter.com/{{twitterClean}}" target="_blank"
                   i.fab.fa-twitter.fa-fw
-                  span.ml-1 = "{{twitter}}"
+                  span.ml-1 = "{{twitterClean}}"
                 | {{/twitter}}
                 | {{#email}}
                 span.link.email.d-block
@@ -59,4 +59,4 @@
             span.index.d-none = "{{index}}"
           | {{/elements}}
       .alert.alert-warning
-        <strong>🙅‍♀️</strong> Do not engage in any type of solicition, bulk messaging, or spamming from this list. Go through their profile and see their availability, skills and position, and engage them personally if they fit your requirements.
+        <strong>🙅‍♀️</strong> Do not engage in any type of soliciting, bulk messaging, or spamming from this list. Go through their profile and see their availability, skills and position, and engage them personally if they fit your requirements.
