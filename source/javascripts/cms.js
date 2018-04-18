@@ -32,9 +32,15 @@ cms.buildPage = function(){
       profession: el[9],
       skills: el[10],
       description: el[11],
-      coverImage: "//picsum.photos/40" + getRandomInt(9) + "/20" + getRandomInt(9),
       emailObfuse: el[2].replace(/@/, "(at)").toLowerCase()
-    }
+    };
+    profile.coverImageUrl = function(){
+      if (el[16].length > 10) {
+        return el[16];
+      } else {
+        return "//picsum.photos/40" + getRandomInt(9) + "/20" + getRandomInt(9);
+      }
+    };
     profile.avatarUrl = function(){
       return gravatar(el[2], { size: 160, backup: "mm" });
     };
